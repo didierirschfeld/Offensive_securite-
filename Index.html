@@ -2,16 +2,242 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
-  <title>Offensive Sécurité</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Offensive Sécurité | Passez à l’offensive pour votre sécurité</title>
   <style>
-    body { font-family: Arial, sans-serif; text-align: center; margin-top: 40px; }
-    img { max-width: 220px; margin: 30px auto; display: block; }
-    h1 { color: #222; }
+    /* ---- RESET ---- */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Open Sans', Arial, sans-serif;
+      background: linear-gradient(180deg, #0a2342 0%, #1d4ed8 100%);
+      color: #f5f5f5;
+      line-height: 1.6;
+    }
+
+    /* ---- HEADER ---- */
+    header {
+      background: rgba(10, 35, 66, 0.95);
+      color: white;
+      padding: 20px 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    header img {
+      height: 60px;
+    }
+    nav a {
+      color: white;
+      margin-left: 25px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: color 0.3s;
+    }
+    nav a:hover {
+      color: #facc15;
+    }
+
+    /* ---- HERO ---- */
+    .hero {
+      background: url('https://images.unsplash.com/photo-1573497161007-6a7b0aa1a164') center/cover no-repeat;
+      color: white;
+      text-align: center;
+      padding: 140px 20px;
+      position: relative;
+    }
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(10, 35, 66, 0.6);
+    }
+    .hero > * {
+      position: relative;
+      z-index: 1;
+    }
+    .hero h1 {
+      font-size: 3.2em;
+      margin-bottom: 20px;
+    }
+    .hero p {
+      font-size: 1.3em;
+      margin-bottom: 30px;
+    }
+    .hero a {
+      background: #f04e30;
+      padding: 15px 35px;
+      color: white;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: bold;
+      transition: background 0.3s;
+    }
+    .hero a:hover {
+      background: #c63b22;
+    }
+
+    /* ---- SECTIONS ---- */
+    section {
+      padding: 70px 20px;
+      max-width: 1100px;
+      margin: auto;
+    }
+    h2 {
+      text-align: center;
+      margin-bottom: 50px;
+      font-size: 2.4em;
+      color: #facc15;
+    }
+
+    /* ---- SERVICES ---- */
+    .services {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+    }
+    .card {
+      background: rgba(255, 255, 255, 0.1);
+      padding: 25px;
+      border-radius: 12px;
+      box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+      backdrop-filter: blur(6px);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+    }
+    .card h3 {
+      color: #facc15;
+      margin-bottom: 15px;
+    }
+
+    /* ---- A PROPOS ---- */
+    #apropos p {
+      margin-bottom: 15px;
+      text-align: center;
+      font-size: 1.1em;
+    }
+
+    /* ---- CONTACT ---- */
+    #contact p {
+      text-align: center;
+      margin-bottom: 10px;
+    }
+    form {
+      display: grid;
+      gap: 15px;
+      max-width: 600px;
+      margin: 30px auto 0;
+    }
+    input, textarea {
+      padding: 14px;
+      border: none;
+      border-radius: 6px;
+      width: 100%;
+      font-size: 1em;
+    }
+    textarea {
+      resize: vertical;
+    }
+    button {
+      background: #f04e30;
+      color: white;
+      padding: 15px;
+      border: none;
+      border-radius: 6px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    button:hover {
+      background: #c63b22;
+    }
+
+    /* ---- FOOTER ---- */
+    footer {
+      background: rgba(10, 35, 66, 0.95);
+      color: white;
+      text-align: center;
+      padding: 25px 20px;
+      margin-top: 40px;
+    }
   </style>
 </head>
 <body>
-  <h1>Offensive Sécurité</h1>
-  <img src="logo.png" alt="Logo Offensive Sécurité">
-  <p>Bienvenue sur notre site dédié à la sécurité offensive.</p>
+
+  <!-- HEADER -->
+  <header>
+    <img src="logo.png" alt="Logo Offensive Sécurité">
+    <nav>
+      <a href="#services">Nos Services</a>
+      <a href="#apropos">À propos</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <h1>Passez à l’offensive pour votre sécurité</h1>
+    <p>Société de sécurité pour Paris et toute l’Île-de-France</p>
+    <a href="#contact">Demander un devis</a>
+  </section>
+
+  <!-- SERVICES -->
+  <section id="services">
+    <h2>Nos Services</h2>
+    <div class="services">
+      <div class="card">
+        <h3>Gardiennage pour entreprises</h3>
+        <p>Nos agents de sécurité assurent la surveillance de vos locaux, bureaux, entrepôts et chantiers. Une présence dissuasive et efficace.</p>
+      </div>
+      <div class="card">
+        <h3>Sécurité en magasin</h3>
+        <p>Des agents spécialisés dans la prévention et la lutte contre le vol à l’étalage. Protection de vos clients, employés et marchandises.</p>
+      </div>
+      <div class="card">
+        <h3>Prévention et réactivité</h3>
+        <p>Nous intervenons avant qu’un acte de vol ou de cambriolage n’ait lieu. La sécurité est préventive : notre grande expérience fait la différence.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- A PROPOS -->
+  <section id="apropos">
+    <h2>À propos de nous</h2>
+    <p><strong>Offensive Sécurité</strong> est une société spécialisée dans la protection des entreprises et commerces à Paris et en Île-de-France.</p>
+    <p>Notre mission : assurer votre tranquillité grâce à une sécurité préventive et des agents professionnels, rigoureux et expérimentés.</p>
+    <p>Nous adaptons nos services à vos besoins spécifiques, que ce soit pour la surveillance continue, la sécurisation de sites sensibles ou la prévention en magasin.</p>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <h2>Contactez-nous</h2>
+    <p>📍 Adresse : 4 avenue Paul Éluard, 93000 Bobigny</p>
+    <p>📞 Téléphone : 07 80 77 79 55</p>
+    <p>👤 Gérant : Didier Irschfeld</p>
+
+    <form action="mailto:didierirschfeld11@gmail.com" method="post" enctype="text/plain">
+      <input type="text" name="nom" placeholder="Votre nom" required>
+      <input type="email" name="email" placeholder="Votre email" required>
+      <input type="tel" name="telephone" placeholder="Votre téléphone">
+      <textarea name="message" placeholder="Votre message" rows="5" required></textarea>
+      <button type="submit">Envoyer</button>
+    </form>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>© 2025 Offensive Sécurité - Tous droits réservés</p>
+  </footer>
+
 </body>
 </html>
